@@ -22,7 +22,8 @@ function getHumanChoice(){
     choice = choice.toLowerCase()
 
     if (choice !== "rock" && choice !== "paper" && choice !== "scissors"){
-        console.log("Invalid Input");
+        console.log("Invalid Input! Try again...");
+        return getHumanChoice();
     } else {
         return choice.charAt(0).toUpperCase() + choice.slice(1);
     }
@@ -57,7 +58,13 @@ function playGame(){
         }
     }
 
-    humanScore > computerScore ? console.log("You win!") : console.log("You lose!");
+    if (humanScore === computerScore){
+        console.log("It's a tie!");
+    } else if (humanScore > computerScore){
+        console.log("You win!");
+    } else {
+        console.log("You lose!");
+    }
 }
 
 playGame();
