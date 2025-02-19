@@ -38,8 +38,8 @@ const computerTurn = document.querySelector("p#computer-turn");
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         console.log(button.textContent);
-        console.log(`Computer picks: ${getComputerChoice()}`);
         computerChoice = getComputerChoice();
+        console.log(`Computer picks: ${computerChoice}`);
         computerTurn.textContent = computerChoice;
         humanTurn.textContent = button.textContent;
     });
