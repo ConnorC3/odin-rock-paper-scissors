@@ -39,8 +39,6 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         humanChoice = button.textContent;
         computerChoice = getComputerChoice();
-        console.log(humanChoice);
-        console.log(`Computer picks: ${computerChoice}`);
         computerTurn.textContent = computerChoice;
         humanTurn.textContent = humanChoice;
 
@@ -54,18 +52,15 @@ const resultText = document.querySelector(".result > h2");
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("Tie game!");
         resultText.textContent = "Tie game!";
     } else if (
         (humanChoice === "Paper" && computerChoice === "Rock") ||
         (humanChoice === "Scissors" && computerChoice === "Paper") ||
         (humanChoice === "Rock" && computerChoice === "Scissors")
     ) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
         resultText.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
         resultText.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
