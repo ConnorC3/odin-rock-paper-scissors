@@ -37,29 +37,36 @@ const computerTurn = document.querySelector("p#computer-turn");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        console.log(button.textContent);
+        humanChoice = button.textContent;
         computerChoice = getComputerChoice();
+        console.log(humanChoice);
         console.log(`Computer picks: ${computerChoice}`);
         computerTurn.textContent = computerChoice;
-        humanTurn.textContent = button.textContent;
+        humanTurn.textContent = humanChoice;
+
+        playRound(humanChoice, computerChoice);
     });
 });
 
 let humanScore = 0;
 let computerScore = 0;
+const resultText = document.querySelector(".result > h2");
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log("Tie game!");
+        resultText.textContent = "Tie game!";
     } else if (
         (humanChoice === "Paper" && computerChoice === "Rock") ||
         (humanChoice === "Scissors" && computerChoice === "Paper") ||
         (humanChoice === "Rock" && computerChoice === "Scissors")
     ) {
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        resultText.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
     } else {
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        resultText.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
 }
