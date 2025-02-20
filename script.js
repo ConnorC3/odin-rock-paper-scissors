@@ -61,9 +61,7 @@ function updateScoreInfo(winner, humanChoice, computerChoice){
 
 function handleClick(humanChoice){
     if (isGameOver()){
-        rockBtn.removeEventListener("click", () => handleClick('Rock'));
-        paperBtn.removeEventListener("click", () => handleClick('Paper'));
-        scissorsBtn.removeEventListener("click", () => handleClick('Scissors'));
+        
         return;
     }
 
