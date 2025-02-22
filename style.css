@@ -4,6 +4,16 @@
     font-family: Verdana, sans-serif;
 }
 
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     background-color: darkgray;
     padding: 30px;
@@ -16,6 +26,10 @@ main, .play-area, .result {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+}
+
+main {
+    flex: 1;
 }
 
 .player-info {
