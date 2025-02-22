@@ -16,3 +16,6 @@ main {
     align-items: center;
 }
 
+.restart-btn {
+    display: none;
+}
