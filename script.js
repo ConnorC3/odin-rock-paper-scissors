@@ -73,45 +73,27 @@ function handleClick(humanChoice){
         computerResult.textContent = computerScore;
         updateScoreInfo(roundWinner, humanChoice, computerChoice);
     } else {
-        showPlayAgain();
-        
-        console.log("game over");
-        playAgainBtn.addEventListener("click", () => {
-            humanScore = 0;
-            computerScore = 0;
-            humanResult.textContent = humanScore;
-            computerResult.textContent = computerScore;
-            console.log("play again button");
-            playAgain();
-        });        
+        showPlayAgain();     
     }
 }
 
 function showPlayAgain(){
-    if (playAgainBtn.style.display === "" || playAgainBtn.style.display === "none"){
-        playAgainBtn.style.display = "block";
-    } 
-    console.log(playAgainBtn.style);
+    playAgainBtn.classList.add("active");
 }
 
 function closePlayAgain(){
-    if (playAgainBtn.style.display === "block"){
-        playAgainBtn.style.display = "none";
-    } 
+    playAgainBtn.classList.remove("active");
 }
 
 function playAgain(){
     humanScore = 0;
     computerScore = 0;
+    humanResult.textContent = humanScore;
+    computerResult.textContent = computerScore;
     closePlayAgain();
 }
-
-// if (!isGameOver()){
-//     rockBtn.addEventListener("click", () => handleClick('Rock'));
-//     paperBtn.addEventListener("click", () => handleClick('Paper'));
-//     scissorsBtn.addEventListener("click", () => handleClick('Scissors'));
-// }
 
 rockBtn.addEventListener("click", () => handleClick('Rock'));
 paperBtn.addEventListener("click", () => handleClick('Paper'));
 scissorsBtn.addEventListener("click", () => handleClick('Scissors'));
+playAgainBtn.addEventListener("click", playAgain);

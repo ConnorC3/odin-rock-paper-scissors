@@ -16,6 +16,16 @@ main {
     align-items: center;
 }
 
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .restart-btn {
     display: none;
+}
+
+.restart-btn.active {
+    display: block;
 }
