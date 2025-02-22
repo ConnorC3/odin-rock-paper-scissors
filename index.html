@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
+    <header>
         <h1>Play Rock, Paper, Scissors!</h1>
+    </header>
+    <main>
+        <h2 class="score-msg">Choose your weapon</h2>
         <div class="play-area">
-            <h2 class="score-msg">Choose your weapon</h2>
-            <h2>Computer plays:</h2>
-            <div class="computer">
-                <p id="computer-turn"></p>
-            </div>
-            <h2>Human plays:</h2>
-            <div class="human">
-                <p id="human-turn"></p>
+            <div class="player-info">
+                <div class="computer">
+                    <h2>Computer plays:</h2>
+                    <p id="computer-turn">?</p>
+                </div>
+                <div class="human">
+                    <h2>Human plays:</h2>
+                    <p id="human-turn">?</p>
+                </div>
             </div>
             <div class="selection">
                 <button id="rock-btn">Rock</button>

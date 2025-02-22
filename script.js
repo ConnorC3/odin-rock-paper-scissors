@@ -90,6 +90,9 @@ function playAgain(){
     computerScore = 0;
     humanResult.textContent = humanScore;
     computerResult.textContent = computerScore;
+    humanTurn.textContent = "?";
+    computerTurn.textContent = "?";
+    scoreMsg.textContent = "Choose your weapon";
     closePlayAgain();
 }
 
