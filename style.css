@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: Verdana, sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -21,11 +22,21 @@ header {
     font-size: 32px;
 }
 
+/*  MAIN  */
+
+.score-msg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-size: 28px;
+}
+
 main, .play-area, .result {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 32px;
 }
 
 main {
